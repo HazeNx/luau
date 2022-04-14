@@ -160,20 +160,19 @@ do
 		parent = parent or frame
 		
 		-- stolen from wally or kiriot, kek
-local gui = WindowFrame
-    local dragging
+local dragging = false
     local dragInput
     local dragStart
-    local startPos
+    local framePos
     local function update(input)
-        local delta = input.Position - dragStart
-        gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+        local delta input.Position = dragStart
+        frame.Position = UDim2.new(framePos.X.Scale, framePos.X.Offset + delta.X, framePos.Y.Scale, framePos.Y.Offset + delta.Y)
     end
-    gui.InputBegan:Connect(function(input)
+    frame.InputBegan:Connect(function(input)
         if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
             dragging = true
             dragStart = input.Position
-            startPos = gui.Position
+            framePos = frame.Position
             
             input.Changed:Connect(function()
                 if input.UserInputState == Enum.UserInputState.End then
@@ -182,7 +181,7 @@ local gui = WindowFrame
             end)
         end
     end)
-    gui.InputChanged:Connect(function(input)
+    frame.InputChanged:Connect(function(input)
         if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
             dragInput = input
         end
