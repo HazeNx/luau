@@ -14,12 +14,12 @@ local utility = {}
 -- themes
 local objects = {}
 local themes = {
-	Background = Color3.fromRGB(24, 24, 24), 
+	Background = Color3.fromRGB(255, 255, 255), 
 	Glow = Color3.fromRGB(0, 0, 0), 
-	Accent = Color3.fromRGB(10, 10, 10), 
+	Accent = Color3.fromRGB(182, 215, 255), 
 	LightContrast = Color3.fromRGB(20, 20, 20), 
 	DarkContrast = Color3.fromRGB(14, 14, 14),  
-	TextColor = Color3.fromRGB(255, 255, 255)
+	TextColor = Color3.fromRGB(0, 0, 0)
 }
 
 do
@@ -220,7 +220,7 @@ do
 				Name = "Main",
 				BackgroundTransparency = 1,
 				Position = UDim2.new(0.25, 0, 0.052435593, 0),
-				Size = UDim2.new(0, 500, 0, 400),
+				Size = UDim2.new(0, 511, 0, 428),
 				Image = "rbxassetid://4641149554",
 				ImageColor3 = themes.Background,
 				ScaleType = Enum.ScaleType.Slice,
@@ -293,8 +293,6 @@ do
 		})
 		
 		utility:InitializeKeybind()
-		utility:DraggingEnabled(container.Main.Page, container.Main)
-		utility:DraggingEnabled(container.Main, container.Main)
 		utility:DraggingEnabled(container.Main.TopBar, container.Main)
 		
 		return setmetatable({
