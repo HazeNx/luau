@@ -1,8 +1,11 @@
 -- init
-local Players = game:GetService("Players")
 local player = game.Players.LocalPlayer
 local mouse = player:GetMouse()
 
+repeat wait() until game:GetService("Players")
+    
+    if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then repeat wait() until game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart") end
+    
 -- services
 local input = game:GetService("UserInputService")
 local run = game:GetService("RunService")
@@ -222,7 +225,7 @@ do
 				BackgroundTransparency = 1,
 				Position = UDim2.new(0.25, 0, 0.052435593, 0),
 				Size = UDim2.new(0, 511, 0, 428),
-				Image = "rbxassetid://4641149554",
+				Image = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png",
 				ImageColor3 = themes.Background,
 				ScaleType = Enum.ScaleType.Slice,
 				SliceCenter = Rect.new(4, 4, 296, 296)
@@ -337,7 +340,7 @@ do
 				Position = UDim2.new(0, 12, 0.5, 0),
 				Size = UDim2.new(0, 16, 0, 16),
 				ZIndex = 3,
-				Image = "https://www.roblox.com/headshot-thumbnail/image?userId="..player.Id.."&width=420&height=420&format=png",
+				Image = "rbxassetid://" .. tostring(icon),
 				ImageColor3 = themes.TextColor,
 				ImageTransparency = 0.64,
 				ScaleType = Enum.ScaleType.Fit
@@ -2169,5 +2172,5 @@ do
 	end
 end
 
-print("hazenx is here :\)")
+print("nx was here :\)")
 return library
