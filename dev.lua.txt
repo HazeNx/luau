@@ -2,6 +2,10 @@
 local player = game.Players.LocalPlayer
 local mouse = player:GetMouse()
 
+repeat wait() until game:GetService("Players")
+    
+    if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then repeat wait() until game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart") end
+    
 -- services
 local input = game:GetService("UserInputService")
 local run = game:GetService("RunService")
@@ -293,6 +297,8 @@ do
 		})
 		
 		utility:InitializeKeybind()
+		utility:DraggingEnabled(container.Main, container.Main)
+		utility:DraggingEnabled(container.Main.Pages, container.Main)
 		utility:DraggingEnabled(container.Main.TopBar, container.Main)
 		
 		return setmetatable({
@@ -406,6 +412,81 @@ do
 				utility:Create("UIListLayout", {
 					SortOrder = Enum.SortOrder.LayoutOrder,
 					Padding = UDim.new(0, 4)
+				}),
+					utility.Create("TextLabel", {
+				        Name = "UserText",
+				        Parent = User,
+				        BackgroundColor3 = Color3.fromRGB(255, 255, 255),
+				        BackgroundTransparency = 1.000,
+				        Position = UDim2.new(0.354999989, 0, 0, 11),
+				        Size = UDim2.new(0, 80, 0, 20),
+				        Font = Enum.Font.Gotham,
+				        Text = tostring(game.Players.LocalPlayer.Name), 
+				        spawn(function()
+				            while wait() do
+				                pcall(function()
+				                    wait(0.1) 
+				                    game:GetService('TweenService'):Create(
+				                        UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+				                        {TextColor3 = Color3.fromRGB(255, 0, 0)}
+				                    ):Play() 
+				                    wait(.5)            
+				                    game:GetService('TweenService'):Create(
+				                        UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+				                        {TextColor3 = Color3.fromRGB(255, 155, 0)}
+				                    ):Play() 
+				                    wait(.5)            
+				                    game:GetService('TweenService'):Create(
+				                        UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+				                        {TextColor3 = Color3.fromRGB(255, 255, 0)}
+				                    ):Play() 
+				                    wait(.5)            
+				                    game:GetService('TweenService'):Create(
+				                        UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+				                        {TextColor3 = Color3.fromRGB(0, 255, 0)}
+				                    ):Play() 
+				                    wait(.5)            
+				                    game:GetService('TweenService'):Create(
+				                        UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+				                        {TextColor3 = Color3.fromRGB(0, 255, 255)}
+				                    ):Play() 
+				                    wait(.5)            
+				                    game:GetService('TweenService'):Create(
+				                        UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+				                        {TextColor3 = Color3.fromRGB(0, 155, 255)}
+				                    ):Play() 
+				                    wait(.5)            
+				                    game:GetService('TweenService'):Create(
+				                        UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+				                        {TextColor3 = Color3.fromRGB(255, 0, 255)}
+				                    ):Play() 
+				                    wait(.5)            
+				                    game:GetService('TweenService'):Create(
+				                        UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+				                        {TextColor3 = Color3.fromRGB(255, 0, 155)}
+				                    ):Play() 
+				                    wait(.5)
+				                end)
+				            end
+				        end),
+				        TextScaled = true,
+				        TextSize = 11.000,
+				        TextWrapped = true,
+				        TextXAlignment = Enum.TextXAlignment.Left,
+				        }, {
+				        utility.Create("ImageLabel", {
+				        Name = "UserImage",
+				        Parent = User,
+				        BackgroundColor3 = Color3.fromRGB(225, 225, 225),
+				        Position = UDim2.new(0, 10, 0, 9),
+				        Size = UDim2.new(0, 25, 0, 25),
+				        Image = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png",
+				    }),
+				        Instance.new("UICorner", {
+				        CornerRadius = UDim.new(0, 100),
+				        Name = "UserImageCorner",
+				        Parent = UserImage,
+					})
 				})
 			})
 		})
