@@ -229,7 +229,7 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 		["Size"] = UDim2.new(0, 200, 0, 30),
 		["TextWrapped"] = true,
 		["ZIndex"] = 3,
-		["TextXAlignment"] = Enum.TextXAlignment.Left,
+		["TextXAlignment"] = Enum.TextXAlignment.Right,
 		["Parent"] = topFrame
 	});
 
