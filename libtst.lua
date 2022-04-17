@@ -256,7 +256,7 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 		["Position"] = UDim2.new(0.05, 0, 0.51, 0),
 		["Size"] = UDim2.new(0, 28, 0, 28),
 		["ZIndex"] = 4,
-		["Image"] = ""https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png"",
+		["Image"] = ""https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png",
 		["Parent"] = topFrame
 	});
 
