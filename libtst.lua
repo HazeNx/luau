@@ -301,7 +301,7 @@ local UserImage = coreFuncs.addInstance("ImageLabel", {
         local UserImageCorner = coreFuncs.addInstance("UICorner", {
         ["CornerRadius"] = UDim.new(0, 100),
         ["Name"] = "UserImageCorner",
-        ["Parent"] = libInstance.MainFrame.NavFrame
+        ["Parent"] = window
         });
      
 coreGUIFuncs.newTab = function(libInstance, name, colors)
@@ -313,7 +313,7 @@ coreGUIFuncs.newTab = function(libInstance, name, colors)
 		["BackgroundColor3"] = colors.Primary,
 		["TextColor3"] = Color3.fromRGB(255,255,255),
 		["ZIndex"] = 3,
-		["Parent"] = libInstance.MainFrame.NavFrame
+		["Parent"] = window
 	});
 
 	local blueLine = coreFuncs.addInstance("Frame", {
