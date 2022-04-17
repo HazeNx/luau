@@ -224,12 +224,13 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 		["BackgroundTransparency"] = 1,
 		["TextColor3"] = Color3.fromRGB(255,255,255),
 		["AnchorPoint"] = Vector2.new(1,0.5),
-		["Position"] = UDim2.new(0, 110, 0, 24),
+		["Font"] = SciFi,
+		["Position"] = UDim2.new(0, 240, 0, 23),
 		["Text"] = name,
 		["Size"] = UDim2.new(0, 200, 0, 30),
 		["TextWrapped"] = true,
-		["ZIndex"] = 3,
-		["TextXAlignment"] = Enum.TextXAlignment.Right,
+		["ZIndex"] = 5,
+		["TextXAlignment"] = Enum.TextXAlignment.Left,
 		["Parent"] = topFrame
 	});
 
@@ -239,9 +240,9 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 		["BackgroundColor3"] = Color3.fromRGB(255, 255, 255),
 		["BackgroundTransparency"] = 1.000,
 		["BorderSizePixel"] = 0,
-		["Position"] = UDim2.new(0.05, 0, 0.51, 0),
-		["Size"] = UDim2.new(0, 20, 0, 20),
-		["Visible"] = false,
+		["Position"] = UDim2.new(0, 240, 0, 23),
+		["Size"] = UDim2.new(0, 15, 0, 15),
+		["Visible"] = true,
 		["ZIndex"] = 4,
 		["Image"] = "http://www.roblox.com/asset/?id=5969992570",
 		["Parent"] = topFrame
@@ -255,6 +256,7 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 		["BorderSizePixel"] = 0,
 		["Position"] = UDim2.new(0.05, 0, 0.51, 0),
 		["Size"] = UDim2.new(0, 28, 0, 28),
+		["Style"] = RobloxRoundDefaultButton,
 		["ZIndex"] = 4,
 		["Image"] = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png",
 		["Parent"] = topFrame
@@ -602,7 +604,7 @@ coreGUIFuncs.newDropdown = function(tabWindow, dropdownContainer, name, colors, 
 		["Name"] = "UIName",
 		["BackgroundTransparency"] = 1,
 		["TextColor3"] = Color3.fromRGB(255,255,255),
-		["AnchorPoint"] = Vector2.new(0.5,0.5),
+		["AnchorPoint"] = Vector2.new(1,0.5),
 		["Position"] = UDim2.new(0.5,0,0.5,0),
 		["Text"] = name,
 		["Size"] = UDim2.new(0, 200, 0, 30),
@@ -1120,8 +1122,10 @@ ezlib.create = function(name, parent, pos, theme, gameID, deleteOldGUI)
 		table.insert(_G.EzHubExclusives, mainGUI.screengui);
 	end
 
-	mainGUI.opennav.MouseButton1Click:Connect(function() coreFuncs.handleNavLib(mainGUI.navframe, mainGUI.opennav, mainGUI.closenav, activeTab) end)
-	mainGUI.closenav.MouseButton1Click:Connect(function() coreFuncs.handleNavLib(mainGUI.navframe, mainGUI.opennav, mainGUI.closenav, activeTab) end)
+	mainGUI.closenav.MouseButton1Click:Connect(function() if game:GetService("CoreGui"):FindFirstChild("EzLib") then
+	           game:GetService("CoreGui")["EzLib"]:Destroy();
+	       end
+	    end)
 
 	-- For toggling
 	game:GetService("UserInputService").InputBegan:Connect(function(input)
