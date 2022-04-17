@@ -259,7 +259,12 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 		["Image"] = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png",
 		["Parent"] = topFrame
 	});
-
+	
+	local navCorner = coreFuncs.addInstance("UICorner", {
+        ["CornerRadius"] = UDim.new(0, 100),
+        ["Name"] = "navCorner",
+        ["Parent"] = NavButton
+});
 	local navFrame = coreFuncs.addInstance("ScrollingFrame", {
 		["Name"] = "NavFrame",
 		["Active"] = true,
