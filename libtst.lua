@@ -224,12 +224,12 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 		["BackgroundTransparency"] = 1,
 		["TextColor3"] = Color3.fromRGB(255,255,255),
 		["AnchorPoint"] = Vector2.new(1,0.5),
-		["Position"] = UDim2.new(0, 100, 0.50, 0),
+		["Position"] = UDim2.new(0.354999989, 0, 0, 11),
 		["Text"] = name,
 		["Size"] = UDim2.new(0, 200, 0, 30),
 		["TextWrapped"] = true,
 		["ZIndex"] = 3,
-		["TextXAlignment"] = Enum.TextXAlignment.Right,
+		["TextXAlignment"] = Enum.TextXAlignment.Left,
 		["Parent"] = topFrame
 	});
 
