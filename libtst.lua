@@ -293,15 +293,14 @@ end
 local UserImage = coreFuncs.addInstance("ImageLabel", {
         ["Name"] = "UserImage",
         ["BackgroundColor3"] = Color3.fromRGB(225, 225, 225),
-        ["Position"] = UDim2.new(0, 10, 0, 9),
         ["Size"] = UDim2.new(0, 25, 0, 25),
         ["Image"] = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png",
-        ["Parent"] = mainFrame
+        ["Parent"] = window
     });
         local UserImageCorner = coreFuncs.addInstance("UICorner", {
         ["CornerRadius"] = UDim.new(0, 100),
         ["Name"] = "UserImageCorner",
-        ["Parent"] = mainFrame
+        ["Parent"] = window
         });
      
 coreGUIFuncs.newTab = function(libInstance, name, colors)
