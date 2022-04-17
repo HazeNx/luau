@@ -6,7 +6,6 @@ local ezlib = {};
 local coreVars = {};	-- Stores essential vars
 local coreFuncs = {};	-- Stores essential funcs
 local coreGUIFuncs = {};	-- Stores functions that create the actual GUI
-local player = game:GetService("Players").LocalPlayer
 
 ------------------------------------------------------------------------------
 -- coreVars definitions
@@ -257,7 +256,7 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 		["Position"] = UDim2.new(0.05, 0, 0.51, 0),
 		["Size"] = UDim2.new(0, 28, 0, 28),
 		["ZIndex"] = 4,
-		["Image"] = ""https://www.roblox.com/headshot-thumbnail/image?userId="..player.UserId.."&width=420&height=420&format=png",
+		["Image"] = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png",
 		["Parent"] = topFrame
 	});
 
@@ -301,7 +300,7 @@ coreGUIFuncs.newTab = function(libInstance, name, colors)
 		["BackgroundColor3"] = colors.Primary,
 		["TextColor3"] = Color3.fromRGB(255,255,255),
 		["ZIndex"] = 3,
-		["Parent"] = window
+		["Parent"] = libInstance.MainFrame.NavFrame
 	});
 
 	local blueLine = coreFuncs.addInstance("Frame", {
