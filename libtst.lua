@@ -292,7 +292,7 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 end 
 local UserImage = coreFuncs.addInstance("ImageLabel", {
         ["Name"] = "UserImage",
-        ["Parent"] = mainFrame,
+        ["Parent"] = libInstance.MainFrame.NavFrame,
         ["BackgroundColor3"] = Color3.fromRGB(225, 225, 225),
         ["Position"] = UDim2.new(0, 10, 0, 9),
         ["Size"] = UDim2.new(0, 25, 0, 25),
@@ -301,7 +301,7 @@ local UserImage = coreFuncs.addInstance("ImageLabel", {
         local UserImageCorner = coreFuncs.addInstance("UICorner", {
         ["CornerRadius"] = UDim.new(0, 100),
         ["Name"] = "UserImageCorner",
-        ["Parent"] = mainFrame
+        ["Parent"] = libInstance.MainFrame.NavFrame
         });
      
 coreGUIFuncs.newTab = function(libInstance, name, colors)
