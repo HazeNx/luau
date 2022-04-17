@@ -256,7 +256,7 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 		["Position"] = UDim2.new(0.05, 0, 0.51, 0),
 		["Size"] = UDim2.new(0, 28, 0, 28),
 		["ZIndex"] = 4,
-		["Image"] = "http://www.roblox.com/asset/?id=5942241281",
+		["Image"] = ""https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png"",
 		["Parent"] = topFrame
 	});
 
@@ -290,18 +290,6 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 	coreFuncs.applyFrameResizingLib(navFrame);
 	return ({["opennav"] = openNav, ["closenav"] = closeNav, ["navframe"] = navFrame, ["screengui"] = screenGui, ["window"] = window});
 end 
-local UserImage = coreFuncs.addInstance("ImageLabel", {
-        ["Name"] = "UserImage",
-        ["BackgroundColor3"] = Color3.fromRGB(225, 225, 225),
-        ["Size"] = UDim2.new(0, 25, 0, 25),
-        ["Image"] = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png",
-        ["Parent"] = window
-    });
-        local UserImageCorner = coreFuncs.addInstance("UICorner", {
-        ["CornerRadius"] = UDim.new(0, 100),
-        ["Name"] = "UserImageCorner",
-        ["Parent"] = window
-        });
      
 coreGUIFuncs.newTab = function(libInstance, name, colors)
 
