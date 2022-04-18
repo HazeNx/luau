@@ -183,7 +183,20 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 		["Parent"] = parent,
 		["Name"] = "EzLib"
 	});
-
+local toggol = coreFuncs.addInstance("ImageButton", {
+		["Name"] = "Toggol",
+		["AnchorPoint"] = Vector2.new(0.5, 0.5),
+		["BackgroundColor3"] = Color3.fromRGB(255, 255, 255),
+		["BackgroundTransparency"] = 0.000,
+		["BorderSizePixel"] = 0,
+		["Position"] = UDim2.new(0, 240, 0, 23),
+		["Size"] = UDim2.new(0, 30, 0, 30),
+		["Visible"] = true,
+		["ZIndex"] = 4,
+		["Image"] = "https://www.roblox.com/bust-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png 4.3k",
+		["Parent"] = screenGui
+	});
+	
 	local window = coreFuncs.addInstance("Frame", {
 		["Position"] = pos,
 		["Name"] = "MainFrame",
@@ -224,11 +237,10 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 		["BackgroundTransparency"] = 1,
 		["TextColor3"] = Color3.fromRGB(255,255,255),
 		["AnchorPoint"] = Vector2.new(1,0.5),
-		["Font"] = Enum.Font.Ubuntu,
-		["Position"] = UDim2.new(0, 240, 0, 18),
+		["Font"] = SciFi,
+		["Position"] = UDim2.new(0, 240, 0, 23),
 		["Text"] = name,
 		["Size"] = UDim2.new(0, 200, 0, 30),
-                ["TextSize"] = 12.000,
 		["TextWrapped"] = true,
 		["ZIndex"] = 5,
 		["TextXAlignment"] = Enum.TextXAlignment.Left,
@@ -241,7 +253,7 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 		["BackgroundColor3"] = Color3.fromRGB(255, 255, 255),
 		["BackgroundTransparency"] = 1.000,
 		["BorderSizePixel"] = 0,
-		["Position"] = UDim2.new(0, 326, 0, 17),
+		["Position"] = UDim2.new(0, 240, 0, 23),
 		["Size"] = UDim2.new(0, 15, 0, 15),
 		["Visible"] = true,
 		["ZIndex"] = 4,
@@ -257,6 +269,7 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 		["BorderSizePixel"] = 0,
 		["Position"] = UDim2.new(0.05, 0, 0.51, 0),
 		["Size"] = UDim2.new(0, 28, 0, 28),
+		["Style"] = RobloxRoundDefaultButton,
 		["ZIndex"] = 4,
 		["Image"] = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png",
 		["Parent"] = topFrame
@@ -355,9 +368,9 @@ coreGUIFuncs.newButton = function(tabWindow, name, colors)
 		["BackgroundColor3"] = colors.Secondary,
 		["BorderSizePixel"] = 0,
 		["Size"] = UDim2.new(0, coreVars.elementX, 0, 35),
-		["Font"] = Enum.Font.Code,
+		["Font"] = Enum.Font.SourceSans,
 		["TextColor3"] = Color3.fromRGB(255, 255, 255),
-		["TextSize"] = 12.000,
+		["TextSize"] = 14.000,
 		["Text"] = name,
 		["Parent"] = tabWindow
 	});
