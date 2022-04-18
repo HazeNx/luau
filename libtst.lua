@@ -238,10 +238,11 @@ local toggoling = coreFuncs.addInstance("ImageButton", {
 		["BackgroundTransparency"] = 1,
 		["TextColor3"] = Color3.fromRGB(255,255,255),
 		["AnchorPoint"] = Vector2.new(1,0.5),
-		["Font"] = SciFi,
+		["Font"] = Oswald,
 		["Position"] = UDim2.new(0, 240, 0, 23),
 		["Text"] = name,
 		["Size"] = UDim2.new(0, 200, 0, 30),
+		["TextSize"] = 15.000,
 		["TextWrapped"] = true,
 		["ZIndex"] = 5,
 		["TextXAlignment"] = Enum.TextXAlignment.Left,
@@ -308,10 +309,11 @@ local toggoling = coreFuncs.addInstance("ImageButton", {
 		["Parent"] = navFrame
 	});
 
+
 	coreFuncs.applyFrameResizingLib(navFrame);
-	return ({["opennav"] = openNav, ["closenav"] = closeNav, ["navframe"] = navFrame, ["screengui"] = screenGui, ["toglos"] = toggoling,  ["window"] = window});
-end 
-     
+	return ({["opennav"] = openNav, ["closenav"] = closeNav, ["navframe"] = navFrame, ["screengui"] = screenGui, ["window"] = window});
+end
+
 coreGUIFuncs.newTab = function(libInstance, name, colors)
 
 	local button = coreFuncs.addInstance("TextButton", {
@@ -1140,6 +1142,9 @@ ezlib.create = function(name, parent, pos, theme, gameID, deleteOldGUI)
 	           game:GetService("CoreGui")["EzLib"]:Destroy();
 	       end
 	end)
+return	
+   ({["toglos"] = toggoling})
+end
     mainGUI.toglos.MouseButton1Click:Connect(function()
     if MainFrame.Visible == true then
        MainFrame.Visible = false
