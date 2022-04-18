@@ -205,6 +205,7 @@ local toggoling = coreFuncs.addInstance("ImageButton", {
 		["ClipsDescendants"] = true,
 		["BorderSizePixel"] = 0,
 		["BackgroundColor3"] = colors.Primary,
+		["Visible"] = true,
 		["Parent"] = screenGui
 	});
 
@@ -1140,11 +1141,11 @@ ezlib.create = function(name, parent, pos, theme, gameID, deleteOldGUI)
 	       end
 	end)
     mainGUI.toglos.MouseButton1Click:Connect(function()
-                if MainFrame.Visible == true then
-                        MainFrame.Visible = false
-                else
-                MainFrame.Visible = true
-   end
+    if MainFrame.Visible == true then
+       MainFrame.Visible = false
+    elseif MainFrame.Visible == false then
+       MainFrame.Visible = true
+     end
 end)
 	-- For toggling
 	game:GetService("UserInputService").InputBegan:Connect(function(input)
