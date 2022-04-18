@@ -199,7 +199,7 @@ local toggoling = coreFuncs.addInstance("ImageButton", {
 	
 	local window = coreFuncs.addInstance("Frame", {
 		["Position"] = pos,
-		["Name"] = "Jakston",
+		["Name"] = "MainFrame",
 		["AnchorPoint"] = Vector2.new(0.5, 0.5),
 		["Size"] = UDim2.new(0, 350, 0, 270),
 		["ClipsDescendants"] = true,
@@ -1141,14 +1141,14 @@ ezlib.create = function(name, parent, pos, theme, gameID, deleteOldGUI)
 	           game:GetService("CoreGui")["EzLib"]:Destroy();
 	       end
 	end)
-    Ezlib.toggol.MouseButton1Click:Connect(function()
+    mainGUI.toggol.MouseButton1Click:Connect(function()
                 currenttab = MainTab.Name
                 for i,v in next, TabFolder:GetChildren() do 
-                    if v.Name == "Jakston" then
+                    if v.Name == "MainFrame" then
                         v.Visible = false
                     end
                 end
-                Jakston.Visible = true
+                MainFrame.Visible = true
 
 	-- For toggling
 	game:GetService("UserInputService").InputBegan:Connect(function(input)
