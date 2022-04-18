@@ -308,9 +308,7 @@ local toggoling = coreFuncs.addInstance("ImageButton", {
 	});
 
 	coreFuncs.applyFrameResizingLib(navFrame);
-	return ({["opennav"] = openNav, ["closenav"] = closeNav, ["navframe"] = navFrame, ["screengui"] = screenGui,
-	   ["toggol"] = toggoling,
-	   ["window"] = window});
+	return ({["opennav"] = openNav, ["closenav"] = closeNav, ["navframe"] = navFrame, ["screengui"] = screenGui, ["toglos"] = toggoling,  ["window"] = window});
 end 
      
 coreGUIFuncs.newTab = function(libInstance, name, colors)
@@ -1141,15 +1139,13 @@ ezlib.create = function(name, parent, pos, theme, gameID, deleteOldGUI)
 	           game:GetService("CoreGui")["EzLib"]:Destroy();
 	       end
 	end)
-    mainGUI.toggol.MouseButton1Click:Connect(function()
-                currenttab = MainTab.Name
-                for i,v in next, TabFolder:GetChildren() do 
-                    if v.Name == "MainFrame" then
-                        v.Visible = false
-                    end
-                end
+    mainGUI.toglos.MouseButton1Click:Connect(function()
+                if MainFrame.Visible == true then
+                        MainFrame.Visible = false
+                else
                 MainFrame.Visible = true
-
+   end
+end)
 	-- For toggling
 	game:GetService("UserInputService").InputBegan:Connect(function(input)
 		if input.KeyCode == keybind then
