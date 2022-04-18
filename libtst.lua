@@ -183,7 +183,7 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 		["Parent"] = parent,
 		["Name"] = "EzLib"
 	});
-local toggol = coreFuncs.addInstance("ImageButton", {
+local toggoling = coreFuncs.addInstance("ImageButton", {
 		["Name"] = "Toggol",
 		["AnchorPoint"] = Vector2.new(0.5, 0.5),
 		["BackgroundColor3"] = Color3.fromRGB(255, 255, 255),
@@ -199,7 +199,7 @@ local toggol = coreFuncs.addInstance("ImageButton", {
 	
 	local window = coreFuncs.addInstance("Frame", {
 		["Position"] = pos,
-		["Name"] = "MainFrame",
+		["Name"] = "Jakston",
 		["AnchorPoint"] = Vector2.new(0.5, 0.5),
 		["Size"] = UDim2.new(0, 350, 0, 270),
 		["ClipsDescendants"] = true,
@@ -308,7 +308,9 @@ local toggol = coreFuncs.addInstance("ImageButton", {
 	});
 
 	coreFuncs.applyFrameResizingLib(navFrame);
-	return ({["opennav"] = openNav, ["closenav"] = closeNav, ["navframe"] = navFrame, ["screengui"] = screenGui, ["window"] = window});
+	return ({["opennav"] = openNav, ["closenav"] = closeNav, ["navframe"] = navFrame, ["screengui"] = screenGui,
+	   ["toggol"] = toggoling,
+	   ["window"] = window});
 end 
      
 coreGUIFuncs.newTab = function(libInstance, name, colors)
@@ -1138,7 +1140,15 @@ ezlib.create = function(name, parent, pos, theme, gameID, deleteOldGUI)
 	mainGUI.closenav.MouseButton1Click:Connect(function() if game:GetService("CoreGui"):FindFirstChild("EzLib") then
 	           game:GetService("CoreGui")["EzLib"]:Destroy();
 	       end
-	    end)
+	end)
+    Ezlib.toggol.MouseButton1Click:Connect(function()
+                currenttab = MainTab.Name
+                for i,v in next, TabFolder:GetChildren() do 
+                    if v.Name == "Jakston" then
+                        v.Visible = false
+                    end
+                end
+                Jakston.Visible = true
 
 	-- For toggling
 	game:GetService("UserInputService").InputBegan:Connect(function(input)
